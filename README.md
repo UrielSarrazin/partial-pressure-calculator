@@ -28,4 +28,4 @@ As it's builded and packaged using the Maven AppAsembler plugin, to run the appl
 
 ## License
 
-Partial Pressure Calculator is Open Source software released under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
+Partial Pressure Calculator is an Open Source software released under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
