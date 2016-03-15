@@ -24,7 +24,10 @@ This application uses Spring Shell. To build it, use the Maven pom file :
 
 > mvn clean install
 
-As it's builded and packaged using the Maven AppAsembler plugin, to run the application, run the `partial-pressure-calculator` script (`partial-pressure-calculator.bat` on Windows), located in the `target/appassembler/bin/` repository.
+As it's built and packaged using the Maven AppAsembler plugin, to run the application, run the `partial-pressure-calculator` script (`partial-pressure-calculator.bat` on Windows), located in the `target/appassembler/bin/` repository.
+Then, run this sample command:
+
+> partial-pressure --breathingMix AIR
 
 ## License
 
