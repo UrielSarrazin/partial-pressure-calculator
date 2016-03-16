@@ -20,7 +20,7 @@ A mathematical expression of the Law of Partial Pressures is:
 
 ## Build and Run
 
-This application uses Spring Shell. To build it, use the Maven pom file :
+This application uses Spring Shell. To build it, issue this command in the project's root directory :
 
 > mvn clean install
 
