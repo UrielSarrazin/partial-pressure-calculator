@@ -19,9 +19,8 @@
     </scm>
     <developers>
         <developer>
-            <id>usarrazin</id>
             <name>Uriel Sarrazin</name>
-            <email>uriel at urielsarrazin.com</email>
+            <email>uriel@urielsarrazin.com</email>
         </developer>
     </developers>
     <build>
