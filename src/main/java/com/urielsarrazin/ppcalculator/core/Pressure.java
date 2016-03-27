@@ -21,7 +21,7 @@ import java.math.RoundingMode;
 
 public class Pressure {
 
-    private final static Double SEA_LEVEL_PRESSURE = 1D;
+    private final static Double ATHMOSPERIC_PRESSURE = 1D;
 
     private final Double bar;
 
@@ -34,7 +34,7 @@ public class Pressure {
     }
 
     public static Pressure create(Depth depth) {
-        return new Pressure(SEA_LEVEL_PRESSURE + (double) depth.getMeters() / 10);
+        return new Pressure(ATHMOSPERIC_PRESSURE).plus(getHydrostaticPressure(depth));
     }
 
     public Double getBar() {
@@ -43,5 +43,13 @@ public class Pressure {
 
     public Double getRoundedBar() {
         return new BigDecimal(bar).setScale(2, RoundingMode.HALF_UP).doubleValue();
+    }
+
+    private static Pressure getHydrostaticPressure(Depth depth) {
+        return Pressure.create((double) depth.getMeters() / 10);
+    }
+
+    private Pressure plus(Pressure pressure) {
+        return Pressure.create(this.bar + pressure.bar);
     }
 }
