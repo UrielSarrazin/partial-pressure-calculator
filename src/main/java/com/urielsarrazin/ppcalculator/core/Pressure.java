@@ -34,7 +34,7 @@ public class Pressure {
     }
 
     public static Pressure create(Depth depth) {
-        return new Pressure(ATHMOSPERIC_PRESSURE).plus(getHydrostaticPressure(depth));
+        return Pressure.create(ATHMOSPERIC_PRESSURE).plus(getHydrostaticPressure(depth));
     }
 
     public Double getBar() {
