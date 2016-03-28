@@ -39,7 +39,7 @@ public class BreathingMixServiceImpl implements BreathingMixService {
 
             final PartialPressuresCalculator partialPressuresCalculator = new PartialPressuresCalculator(breathingMix, currentDepth);
 
-            final PartialPressuresCalculResult partialPressuresCalculResult = partialPressuresCalculator.calculerPressionsPartielles();
+            final PartialPressuresCalculResult partialPressuresCalculResult = partialPressuresCalculator.calculatePartialPressures();
 
             partialPressuresCalculResults.add(partialPressuresCalculResult);
         }

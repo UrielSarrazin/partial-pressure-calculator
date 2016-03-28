@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Full suite" parallel="false">
+    <test verbose="1" name="partial-pressure-calculator" annotations="JDK">
+        <packages>
+            <package name="com.urielsarrazin.ppcalculator.calculator"/>
+            <package name="com.urielsarrazin.ppcalculator.core"/>
+            <package name="com.urielsarrazin.ppcalculator.service"/>
+        </packages>
+    </test>
+</suite>

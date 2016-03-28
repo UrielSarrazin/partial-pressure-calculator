@@ -32,7 +32,7 @@ public class PartialPressuresCalculator {
         this.depth = depth;
     }
 
-    public PartialPressuresCalculResult calculerPressionsPartielles() {
+    public PartialPressuresCalculResult calculatePartialPressures() {
 
         final Map<Gas, Pressure> partialPressuresPerGas = new HashMap<>();
 
