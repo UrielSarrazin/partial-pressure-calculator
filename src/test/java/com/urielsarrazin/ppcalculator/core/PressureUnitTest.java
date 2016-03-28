@@ -23,16 +23,25 @@ public class PressureUnitTest extends Assert {
 
     @Test
     void testCreateWithPressure() {
-        assertEquals(Pressure.create(1D).getBar(), 1.0D);
+
+        final Pressure pressure = Pressure.create(1D);
+
+        assertTrue(pressure.getBar().equals(1.0D));
     }
 
     @Test
     void testCreateWithDepth() {
-        assertEquals(Pressure.create(Depth.create(12)).getBar(), 2.2D);
+
+        final Pressure pressure = Pressure.create(Depth.create(12));
+
+        assertTrue(pressure.getBar().equals(2.2D));
     }
 
     @Test
     void testGetPartialPressure() {
-        assertEquals(Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D)).getBar(), 0.2D);
+
+        final Pressure partialPressure = Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D));
+
+        assertTrue(partialPressure.getBar().equals(0.2D));
     }
 }

@@ -17,16 +17,25 @@
 package com.urielsarrazin.ppcalculator.core;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class BreathingMixComponentUnitTest extends Assert {
 
+    private BreathingMixComponent breathingMixComponent;
+
+    @BeforeClass
+    void init() {
+        breathingMixComponent = BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D));
+    }
+
     @Test
-    void testCreate() {
+    void testGas() {
+        assertTrue(breathingMixComponent.getGas().equals(Gas.O2));
+    }
 
-        final BreathingMixComponent breathingMixComponent = BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D));
-
-        assertEquals(breathingMixComponent.getGas(), Gas.O2);
-        assertEquals(breathingMixComponent.getPourcentage().getValue(), 20D);
+    @Test
+    void testPourcentage() {
+        assertTrue(breathingMixComponent.getPourcentage().getValue().equals(20D));
     }
 }

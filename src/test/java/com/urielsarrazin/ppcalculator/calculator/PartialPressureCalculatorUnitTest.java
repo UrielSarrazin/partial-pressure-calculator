@@ -21,30 +21,56 @@ import com.urielsarrazin.ppcalculator.core.Depth;
 import com.urielsarrazin.ppcalculator.core.Gas;
 import com.urielsarrazin.ppcalculator.core.Pressure;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Map;
 
 public class PartialPressureCalculatorUnitTest extends Assert {
 
-    @Test
-    void testCalculatePartialPressure() {
+    private PartialPressuresCalculResult partialPressuresCalculResult;
 
-        final PartialPressuresCalculResult partialPressuresCalculResult = new PartialPressuresCalculator(BreathingMix.AIR, Depth.create(20))
+    private Map<Gas, Pressure> partialPressuresPerGas;
+
+    @BeforeClass
+    void init() {
+
+        partialPressuresCalculResult = new PartialPressuresCalculator(BreathingMix.AIR, Depth.create(20))
                 .calculatePartialPressures();
 
+        partialPressuresPerGas = partialPressuresCalculResult.getPartialPressuresPerGas();
+    }
+
+    @Test
+    void testBreathingMix() {
         assertTrue(partialPressuresCalculResult.getBreathingMix().equals(BreathingMix.AIR));
+    }
 
+    @Test
+    void testDepth() {
         assertTrue(partialPressuresCalculResult.getDepth().getMeters().equals(20));
+    }
 
-        final Map<Gas, Pressure> partialPressuresPerGas = partialPressuresCalculResult.getPartialPressuresPerGas();
-
+    @Test
+    void testpartialPressuresPerGas() {
         assertTrue(partialPressuresPerGas.size() == 2);
+    }
 
-        assertTrue(partialPressuresPerGas.containsKey(Gas.O2));
-        assertTrue(partialPressuresPerGas.get(Gas.O2).getBar().equals(0.63D));
+    @Test
+    void testPartialPressuresO2() {
 
         assertTrue(partialPressuresPerGas.containsKey(Gas.N2));
-        assertTrue(partialPressuresPerGas.get(Gas.N2).getBar().equals(2.37D));
+
+        final Pressure partialPressureN2 = partialPressuresPerGas.get(Gas.N2);
+        assertTrue(partialPressureN2.getBar().equals(2.37D));
+    }
+
+    @Test
+    void testPartialPressuresN2() {
+
+        assertTrue(partialPressuresPerGas.containsKey(Gas.N2));
+
+        final Pressure partialPressureN2 = partialPressuresPerGas.get(Gas.N2);
+        assertTrue(partialPressureN2.getBar().equals(2.37D));
     }
 }

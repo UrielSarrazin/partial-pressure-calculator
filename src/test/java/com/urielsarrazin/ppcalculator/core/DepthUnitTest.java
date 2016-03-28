@@ -23,6 +23,9 @@ public class DepthUnitTest extends Assert {
 
     @Test
     void testCreate() {
-        assertEquals(Depth.create(10).getMeters(), new Integer(10));
+
+        final Depth depth = Depth.create(10);
+
+        assertTrue(depth.getMeters().equals(new Integer(10)));
     }
 }

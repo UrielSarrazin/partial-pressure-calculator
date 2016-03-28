@@ -23,6 +23,9 @@ public class PourcentageUnitTest extends Assert {
 
     @Test
     void testCreate() {
-        assertEquals(Pourcentage.create(10D).getValue(), 10D);
+
+        final Pourcentage pourcentage = Pourcentage.create(10D);
+
+        assertTrue(pourcentage.getValue().equals(10D));
     }
 }

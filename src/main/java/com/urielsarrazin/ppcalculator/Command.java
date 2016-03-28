@@ -41,7 +41,7 @@ public class Command implements CommandMarker {
 
     @CliCommand(value = "partial-pressure")
     public String gasPartialPressure(
-            @CliOption(key = {"breathingMix"}, mandatory = true)
+            @CliOption(key = {"breathingMix"}, mandatory = false)
             final BreathingMix breathingMix
     ) {
 
