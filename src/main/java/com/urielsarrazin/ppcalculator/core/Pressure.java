@@ -16,9 +16,6 @@
 
 package com.urielsarrazin.ppcalculator.core;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 public class Pressure {
 
     private final static Double ATHMOSPERIC_PRESSURE = 1D;
@@ -34,22 +31,14 @@ public class Pressure {
     }
 
     public static Pressure create(Depth depth) {
-        return Pressure.create(ATHMOSPERIC_PRESSURE).plus(getHydrostaticPressure(depth));
+        return Pressure.create(ATHMOSPERIC_PRESSURE + (double) depth.getMeters() / 10);
+    }
+
+    public static Pressure getPartialPressure(Pressure absolutePressure, Pourcentage pourcentage) {
+        return Pressure.create(absolutePressure.getBar() * pourcentage.getValue() / 100);
     }
 
     public Double getBar() {
         return bar;
-    }
-
-    public Double getRoundedBar() {
-        return new BigDecimal(bar).setScale(2, RoundingMode.HALF_UP).doubleValue();
-    }
-
-    private static Pressure getHydrostaticPressure(Depth depth) {
-        return Pressure.create((double) depth.getMeters() / 10);
-    }
-
-    private Pressure plus(Pressure pressure) {
-        return Pressure.create(this.bar + pressure.bar);
     }
 }

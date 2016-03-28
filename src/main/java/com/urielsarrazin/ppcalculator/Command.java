@@ -21,7 +21,6 @@ import com.urielsarrazin.ppcalculator.core.BreathingMix;
 import com.urielsarrazin.ppcalculator.core.Gas;
 import com.urielsarrazin.ppcalculator.core.Pressure;
 import com.urielsarrazin.ppcalculator.service.BreathingMixService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.core.CommandMarker;
 import org.springframework.shell.core.annotation.CliCommand;
@@ -29,6 +28,8 @@ import org.springframework.shell.core.annotation.CliOption;
 import org.springframework.shell.support.util.OsUtils;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Map;
 
@@ -65,7 +66,7 @@ public class Command implements CommandMarker {
                         .append("\t")
                         .append(pressionPartielleGaz.getKey())
                         .append("\t")
-                        .append(pressionPartielleGaz.getValue().getRoundedBar());
+                        .append(new BigDecimal(pressionPartielleGaz.getValue().getBar()).setScale(2, RoundingMode.HALF_UP).doubleValue());
 
             result.append(OsUtils.LINE_SEPARATOR);
         }

@@ -32,8 +32,7 @@ public class PressureUnitTest extends Assert {
     }
 
     @Test
-    void testRounding() {
-        assertEquals(Pressure.create(1.256).getRoundedBar(), 1.26D);
-        assertEquals(Pressure.create(1.255).getRoundedBar(), 1.25D);
+    void testGetPartialPressure() {
+        assertEquals(Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D)).getBar(), 0.2D);
     }
 }

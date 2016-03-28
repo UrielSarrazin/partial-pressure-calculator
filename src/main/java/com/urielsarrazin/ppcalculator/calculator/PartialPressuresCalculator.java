@@ -27,12 +27,9 @@ public class PartialPressuresCalculator {
 
     private final Depth depth;
 
-    private final Pressure absolutePressure;
-
     public PartialPressuresCalculator(BreathingMix breathingMix, Depth depth) {
         this.breathingMix = breathingMix;
         this.depth = depth;
-        this.absolutePressure = Pressure.create(depth);
     }
 
     public PartialPressuresCalculResult calculerPressionsPartielles() {
@@ -41,15 +38,15 @@ public class PartialPressuresCalculator {
 
         for (BreathingMixComponent breathingMixComponent : breathingMix.getBreathingMixComponents()) {
 
-            final Pressure partialPressure = calculatePartialPressure(breathingMixComponent.getPourcentage());
+            final Pressure absolutePressure = Pressure.create(depth);
+
+            final Pourcentage breathingMixComponentPourcentage = breathingMixComponent.getPourcentage();
+
+            final Pressure partialPressure = Pressure.getPartialPressure(absolutePressure, breathingMixComponentPourcentage);
 
             partialPressuresPerGas.put(breathingMixComponent.getGas(), partialPressure);
         }
 
         return new PartialPressuresCalculResult(breathingMix, depth, partialPressuresPerGas);
-    }
-
-    private Pressure calculatePartialPressure(Pourcentage pourcentage) {
-        return Pressure.create(absolutePressure.getBar() * pourcentage.getValue() / 100);
     }
 }
