@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator;
+package com.urielsarrazin.ppc;
 
-import com.urielsarrazin.ppcalculator.calculator.PartialPressuresCalculResult;
-import com.urielsarrazin.ppcalculator.core.BreathingMix;
-import com.urielsarrazin.ppcalculator.core.Gas;
-import com.urielsarrazin.ppcalculator.core.Pressure;
-import com.urielsarrazin.ppcalculator.service.BreathingMixService;
+import com.urielsarrazin.ppc.calculator.PartialPressuresCalculResult;
+import com.urielsarrazin.ppc.core.BreathingMix;
+import com.urielsarrazin.ppc.core.Gas;
+import com.urielsarrazin.ppc.core.Pressure;
+import com.urielsarrazin.ppc.service.BreathingMixService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.core.CommandMarker;
 import org.springframework.shell.core.annotation.CliCommand;

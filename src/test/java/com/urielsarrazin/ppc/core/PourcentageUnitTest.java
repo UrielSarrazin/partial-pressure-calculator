@@ -14,10 +14,18 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
-public enum Gas {
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-    O2, N2, He
+public class PourcentageUnitTest extends Assert {
 
+    @Test
+    void testCreate() {
+
+        final Pourcentage pourcentage = Pourcentage.create(10D);
+
+        assertTrue(pourcentage.getValue().equals(10D));
+    }
 }

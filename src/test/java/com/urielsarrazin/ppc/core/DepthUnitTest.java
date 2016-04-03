@@ -14,34 +14,18 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PressureUnitTest extends Assert {
+public class DepthUnitTest extends Assert {
 
     @Test
-    void testCreateWithPressure() {
+    void testCreate() {
 
-        final Pressure pressure = Pressure.create(1D);
+        final Depth depth = Depth.create(10);
 
-        assertTrue(pressure.getBar().equals(1.0D));
-    }
-
-    @Test
-    void testCreateWithDepth() {
-
-        final Pressure pressure = Pressure.create(Depth.create(12));
-
-        assertTrue(pressure.getBar().equals(2.2D));
-    }
-
-    @Test
-    void testGetPartialPressure() {
-
-        final Pressure partialPressure = Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D));
-
-        assertTrue(partialPressure.getBar().equals(0.2D));
+        assertTrue(depth.getMeters().equals(new Integer(10)));
     }
 }

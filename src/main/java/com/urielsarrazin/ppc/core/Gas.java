@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.service;
+package com.urielsarrazin.ppc.core;
 
-import com.urielsarrazin.ppcalculator.calculator.PartialPressuresCalculResult;
-import com.urielsarrazin.ppcalculator.core.BreathingMix;
+public enum Gas {
 
-import java.util.List;
+    O2, N2, He
 
-public interface BreathingMixService {
-
-    List<PartialPressuresCalculResult> calculatePartialPressures(BreathingMix breathingMix);
 }

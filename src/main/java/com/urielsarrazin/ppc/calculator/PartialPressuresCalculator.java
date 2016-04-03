@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.calculator;
+package com.urielsarrazin.ppc.calculator;
 
-import com.urielsarrazin.ppcalculator.core.*;
+import com.urielsarrazin.ppc.core.*;
 
 import java.util.HashMap;
 import java.util.Map;

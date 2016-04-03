@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.service;
+package com.urielsarrazin.ppc.service;
 
-import com.urielsarrazin.ppcalculator.calculator.PartialPressuresCalculResult;
-import com.urielsarrazin.ppcalculator.core.BreathingMix;
-import com.urielsarrazin.ppcalculator.service.impl.BreathingMixServiceImpl;
+import com.urielsarrazin.ppc.calculator.PartialPressuresCalculResult;
+import com.urielsarrazin.ppc.core.BreathingMix;
+import com.urielsarrazin.ppc.service.impl.BreathingMixServiceImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

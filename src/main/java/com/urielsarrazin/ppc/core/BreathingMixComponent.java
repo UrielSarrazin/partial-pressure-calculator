@@ -14,21 +14,28 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
-public class Pourcentage {
+public class BreathingMixComponent {
 
-    private final Double value;
+    private final Gas gas;
 
-    private Pourcentage(Double value) {
-        this.value = value;
+    private final Pourcentage pourcentage;
+
+    private BreathingMixComponent(Gas gas, Pourcentage pourcentage) {
+        this.gas = gas;
+        this.pourcentage = pourcentage;
     }
 
-    public static Pourcentage create(Double pourcentage) {
-        return new Pourcentage(pourcentage);
+    public static BreathingMixComponent create(Gas gas, Pourcentage pourcentage) {
+        return new BreathingMixComponent(gas, pourcentage);
     }
 
-    public Double getValue() {
-        return value;
+    public Gas getGas() {
+        return gas;
+    }
+
+    public Pourcentage getPourcentage() {
+        return pourcentage;
     }
 }

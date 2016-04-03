@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.service.impl;
+package com.urielsarrazin.ppc.service.impl;
 
-import com.urielsarrazin.ppcalculator.calculator.PartialPressuresCalculResult;
-import com.urielsarrazin.ppcalculator.calculator.PartialPressuresCalculator;
-import com.urielsarrazin.ppcalculator.core.BreathingMix;
-import com.urielsarrazin.ppcalculator.core.Depth;
-import com.urielsarrazin.ppcalculator.service.BreathingMixService;
+import com.urielsarrazin.ppc.calculator.PartialPressuresCalculResult;
+import com.urielsarrazin.ppc.calculator.PartialPressuresCalculator;
+import com.urielsarrazin.ppc.core.BreathingMix;
+import com.urielsarrazin.ppc.core.Depth;
+import com.urielsarrazin.ppc.service.BreathingMixService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

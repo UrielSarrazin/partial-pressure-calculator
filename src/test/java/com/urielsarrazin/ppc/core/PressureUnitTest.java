@@ -14,28 +14,34 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class BreathingMixComponentUnitTest extends Assert {
+public class PressureUnitTest extends Assert {
 
-    private BreathingMixComponent breathingMixComponent;
+    @Test
+    void testCreateWithPressure() {
 
-    @BeforeClass
-    void init() {
-        breathingMixComponent = BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D));
+        final Pressure pressure = Pressure.create(1D);
+
+        assertTrue(pressure.getBar().equals(1.0D));
     }
 
     @Test
-    void testGas() {
-        assertTrue(breathingMixComponent.getGas().equals(Gas.O2));
+    void testCreateWithDepth() {
+
+        final Pressure pressure = Pressure.create(Depth.create(12));
+
+        assertTrue(pressure.getBar().equals(2.2D));
     }
 
     @Test
-    void testPourcentage() {
-        assertTrue(breathingMixComponent.getPourcentage().getValue().equals(20D));
+    void testGetPartialPressure() {
+
+        final Pressure partialPressure = Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D));
+
+        assertTrue(partialPressure.getBar().equals(0.2D));
     }
 }

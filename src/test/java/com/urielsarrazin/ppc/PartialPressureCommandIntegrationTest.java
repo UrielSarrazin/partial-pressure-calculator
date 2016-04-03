@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator;
+package com.urielsarrazin.ppc;
 
 import org.springframework.shell.Bootstrap;
 import org.springframework.shell.core.CommandResult;

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.calculator;
+package com.urielsarrazin.ppc.calculator;
 
-import com.urielsarrazin.ppcalculator.core.BreathingMix;
-import com.urielsarrazin.ppcalculator.core.Depth;
-import com.urielsarrazin.ppcalculator.core.Gas;
-import com.urielsarrazin.ppcalculator.core.Pressure;
+import com.urielsarrazin.ppc.core.BreathingMix;
+import com.urielsarrazin.ppc.core.Depth;
+import com.urielsarrazin.ppc.core.Gas;
+import com.urielsarrazin.ppc.core.Pressure;
 
 import java.util.Map;
 

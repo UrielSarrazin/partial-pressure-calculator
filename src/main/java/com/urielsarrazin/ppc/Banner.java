@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator;
+package com.urielsarrazin.ppc;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

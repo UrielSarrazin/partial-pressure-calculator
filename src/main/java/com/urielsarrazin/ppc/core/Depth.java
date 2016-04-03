@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+public final class Depth {
 
-public class PourcentageUnitTest extends Assert {
+    private final Integer meters;
 
-    @Test
-    void testCreate() {
+    private Depth(Integer meters) {
+        this.meters = meters;
+    }
 
-        final Pourcentage pourcentage = Pourcentage.create(10D);
+    public static Depth create(Integer meters) {
+        return new Depth(meters);
+    }
 
-        assertTrue(pourcentage.getValue().equals(10D));
+    public Integer getMeters() {
+        return meters;
     }
 }

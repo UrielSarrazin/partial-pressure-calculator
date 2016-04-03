@@ -14,28 +14,14 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.service;
 
-public class BreathingMixComponent {
+import com.urielsarrazin.ppc.calculator.PartialPressuresCalculResult;
+import com.urielsarrazin.ppc.core.BreathingMix;
 
-    private final Gas gas;
+import java.util.List;
 
-    private final Pourcentage pourcentage;
+public interface BreathingMixService {
 
-    private BreathingMixComponent(Gas gas, Pourcentage pourcentage) {
-        this.gas = gas;
-        this.pourcentage = pourcentage;
-    }
-
-    public static BreathingMixComponent create(Gas gas, Pourcentage pourcentage) {
-        return new BreathingMixComponent(gas, pourcentage);
-    }
-
-    public Gas getGas() {
-        return gas;
-    }
-
-    public Pourcentage getPourcentage() {
-        return pourcentage;
-    }
+    List<PartialPressuresCalculResult> calculatePartialPressures(BreathingMix breathingMix);
 }

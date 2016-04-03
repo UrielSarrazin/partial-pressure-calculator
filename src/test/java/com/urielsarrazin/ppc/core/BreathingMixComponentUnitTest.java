@@ -14,21 +14,28 @@
  * limitations under the License.
  */
 
-package com.urielsarrazin.ppcalculator.core;
+package com.urielsarrazin.ppc.core;
 
-public final class Depth {
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-    private final Integer meters;
+public class BreathingMixComponentUnitTest extends Assert {
 
-    private Depth(Integer meters) {
-        this.meters = meters;
+    private BreathingMixComponent breathingMixComponent;
+
+    @BeforeClass
+    void init() {
+        breathingMixComponent = BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D));
     }
 
-    public static Depth create(Integer meters) {
-        return new Depth(meters);
+    @Test
+    void testGas() {
+        assertTrue(breathingMixComponent.getGas().equals(Gas.O2));
     }
 
-    public Integer getMeters() {
-        return meters;
+    @Test
+    void testPourcentage() {
+        assertTrue(breathingMixComponent.getPourcentage().getValue().equals(20D));
     }
 }
