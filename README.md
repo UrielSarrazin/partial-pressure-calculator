@@ -63,14 +63,14 @@ The following content will appears on the console :
 ```bash
 partial-pressure-calculator
 
- b build mvn clean install
- r run ./target/appassembler/bin/partial-pressure-calculator
- d documentation sensible-browser https://github.com/srielsarrazin/partial-pressure-calculator
- f file bug report sensible-browser https://github.com/urielsarrazin/partial-pressure-calculator/issues/new
+b build mvn clean install
+r run ./target/appassembler/bin/partial-pressure-calculator
+d documentation sensible-browser https://github.com/srielsarrazin/partial-pressure-calculator
+f file bug report sensible-browser https://github.com/urielsarrazin/partial-pressure-calculator/issues/new
 
- spacebar back, tabulation bash, return repeat, backspace reload, ^d or ^c quit
+spacebar back, tabulation bash, return repeat, backspace reload, ^d or ^c quit
 
- ? _
+? _
 ```
 To build the application, stroke the `b` key, to run it stroke the `r` key, and so on...
 
