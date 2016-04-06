@@ -51,18 +51,55 @@
 <h2>
 <a id="build-and-run" class="anchor" href="#build-and-run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build and Run</h2>
 
+<h3>
+<a id="using-maven-and-classic-command-line" class="anchor" href="#using-maven-and-classic-command-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Maven and classic Command-line</h3>
+
 <p>This application uses Spring Shell. To build it, issue this command in the project's root directory :</p>
 
-<blockquote>
-<p>mvn clean install</p>
-</blockquote>
+<div class="highlight highlight-source-shell"><pre>mvn clean install</pre></div>
 
 <p>As it's built and packaged using the Maven AppAsembler plugin, to run the application, run the <code>partial-pressure-calculator</code> script (<code>partial-pressure-calculator.bat</code> on Windows), located in the <code>target/appassembler/bin/</code> repository.
-Then, run this sample command:</p>
+Then, issue this sample command:</p>
 
-<blockquote>
-<p>partial-pressure --breathingMix AIR</p>
-</blockquote>
+<div class="highlight highlight-source-shell"><pre>partial-pressure --breathingMix AIR</pre></div>
+
+<h3>
+<a id="using-hotshell" class="anchor" href="#using-hotshell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Hotshell</h3>
+
+<p>Hotshell is a productivity enhancer command-line tool. Using this tool will simplify a lot the work load to build an run the application. For more details on this tools, please refer to <a href="http://www.moumne.com/hotshell">Hotshell web site</a>. This open-source is hosted <a href="https://github.com/julienmoumne/hotshell">here</a> on GitHub. Installation is detailed in the project's documentation.</p>
+
+<p>Placed at the project's root directory, there's the <code>hs.js</code> Hotshell's javascript file :</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">item</span>({desc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>partial-pressure-calculator<span class="pl-pds">'</span></span>}, <span class="pl-k">function</span>() {
+
+    github <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>https://github.com/urielsarrazin/partial-pressure-calculator<span class="pl-pds">'</span></span>
+    linux <span class="pl-k">=</span> <span class="pl-en">exec</span>(<span class="pl-s"><span class="pl-pds">'</span>uname<span class="pl-pds">'</span></span>).<span class="pl-c1">indexOf</span>(<span class="pl-s"><span class="pl-pds">'</span>Linux<span class="pl-pds">'</span></span>) <span class="pl-k">&gt;</span> <span class="pl-k">-</span><span class="pl-c1">1</span>
+    browser <span class="pl-k">=</span> linux <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">'</span>sensible-browser<span class="pl-pds">'</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>open<span class="pl-pds">'</span></span>
+
+    <span class="pl-en">item</span>({key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>, desc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>, cmd<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mvn clean install<span class="pl-pds">'</span></span>})
+    <span class="pl-en">item</span>({key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>r<span class="pl-pds">'</span></span>, desc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>run<span class="pl-pds">'</span></span>, cmd<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>./target/appassembler/bin/partial-pressure-calculator<span class="pl-pds">'</span></span>})
+    <span class="pl-en">item</span>({key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>d<span class="pl-pds">'</span></span>, desc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>documentation<span class="pl-pds">'</span></span>, cmd<span class="pl-k">:</span> browser <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span> <span class="pl-k">+</span> github})
+    <span class="pl-en">item</span>({key<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>f<span class="pl-pds">'</span></span>, desc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>file bug report<span class="pl-pds">'</span></span>, cmd<span class="pl-k">:</span> browser <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span> <span class="pl-k">+</span> github <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/issues/new<span class="pl-pds">'</span></span>})
+})</pre></div>
+
+<p>To use this file with Hotshell, issue the following command in the project's root directory :</p>
+
+<div class="highlight highlight-source-shell"><pre>hs -f hs.js</pre></div>
+
+<p>The following content will appears on the console :</p>
+
+<div class="highlight highlight-source-shell"><pre>partial-pressure-calculator
+
+ b build mvn clean install
+ r run ./target/appassembler/bin/partial-pressure-calculator
+ d documentation sensible-browser https://github.com/srielsarrazin/partial-pressure-calculator
+ f file bug report sensible-browser https://github.com/urielsarrazin/partial-pressure-calculator/issues/new
+
+ spacebar back, tabulation bash, <span class="pl-k">return</span> repeat, backspace reload, ^d or ^c quit
+
+ <span class="pl-k">?</span> _</pre></div>
+
+<p>To build the application, stroke the <code>b</code> key, to run it stroke the <code>r</code> key, and so on...</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
