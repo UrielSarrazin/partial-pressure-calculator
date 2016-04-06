@@ -22,26 +22,26 @@ import org.testng.annotations.Test;
 public class PressureUnitTest extends Assert {
 
     @Test
-    void testCreateWithPressure() {
+    void creationWithPressureTest() {
 
         final Pressure pressure = Pressure.create(1D);
 
-        assertTrue(pressure.getBar().equals(1.0D));
+        assertEquals(pressure.getBar(), 1.0D);
     }
 
     @Test
-    void testCreateWithDepth() {
+    void creationWithDepthTest() {
 
         final Pressure pressure = Pressure.create(Depth.create(12));
 
-        assertTrue(pressure.getBar().equals(2.2D));
+        assertEquals(pressure.getBar(), 2.2D);
     }
 
     @Test
-    void testGetPartialPressure() {
+    void getPartialPressureTest() {
 
         final Pressure partialPressure = Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D));
 
-        assertTrue(partialPressure.getBar().equals(0.2D));
+        assertEquals(partialPressure.getBar(), 0.2D);
     }
 }

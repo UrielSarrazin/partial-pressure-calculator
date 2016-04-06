@@ -45,35 +45,35 @@ public class PartialPressureCalculatorUnitTest extends Assert {
     }
 
     @Test
-    void testBreathingMix() {
-        assertTrue(partialPressuresCalculResult.getBreathingMix().equals(AIR));
+    void breathingMixTest() {
+        assertEquals(partialPressuresCalculResult.getBreathingMix(), AIR);
     }
 
     @Test
-    void testDepth() {
+    void depthTest() {
         assertTrue(partialPressuresCalculResult.getDepth().getMeters().equals(20));
     }
 
     @Test
-    void testpartialPressuresPerGas() {
-        assertTrue(partialPressuresPerGas.size() == 2);
+    void partialPressuresPerGasTest() {
+        assertEquals(partialPressuresPerGas.size(), 2);
     }
 
     @Test
-    void testPartialPressuresO2() {
+    void oxygenPartialPressureTest() {
 
         assertTrue(partialPressuresPerGas.containsKey(O2));
 
-        final Pressure partialPressureN2 = partialPressuresPerGas.get(O2);
-        assertTrue(partialPressureN2.getBar().equals(0.63D));
+        final Pressure oxygenPartialPressure = partialPressuresPerGas.get(O2);
+        assertEquals(oxygenPartialPressure.getBar(), 0.63D);
     }
 
     @Test
-    void testPartialPressuresN2() {
+    void nitrogenPartialPressureTest() {
 
         assertTrue(partialPressuresPerGas.containsKey(N2));
 
-        final Pressure partialPressureN2 = partialPressuresPerGas.get(N2);
-        assertTrue(partialPressureN2.getBar().equals(2.37D));
+        final Pressure nitrogenPartialPressure = partialPressuresPerGas.get(N2);
+        assertEquals(nitrogenPartialPressure.getBar(), 2.37D);
     }
 }

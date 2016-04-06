@@ -22,10 +22,10 @@ import org.testng.annotations.Test;
 public class DepthUnitTest extends Assert {
 
     @Test
-    void testCreate() {
+    void creationTest() {
 
         final Depth depth = Depth.create(10);
 
-        assertTrue(depth.getMeters().equals(new Integer(10)));
+        assertEquals(depth.getMeters(), new Integer(10));
     }
 }

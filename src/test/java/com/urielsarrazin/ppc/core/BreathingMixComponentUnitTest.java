@@ -20,22 +20,24 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static com.urielsarrazin.ppc.core.Gas.O2;
+
 public class BreathingMixComponentUnitTest extends Assert {
 
     private BreathingMixComponent breathingMixComponent;
 
     @BeforeClass
     void init() {
-        breathingMixComponent = BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D));
+        breathingMixComponent = BreathingMixComponent.create(O2, Pourcentage.create(20D));
     }
 
     @Test
-    void testGas() {
-        assertTrue(breathingMixComponent.getGas().equals(Gas.O2));
+    void gasTest() {
+        assertEquals(breathingMixComponent.getGas(), O2);
     }
 
     @Test
-    void testPourcentage() {
-        assertTrue(breathingMixComponent.getPourcentage().getValue().equals(20D));
+    void pourcentageTest() {
+        assertEquals(breathingMixComponent.getPourcentage().getValue(), 20D);
     }
 }

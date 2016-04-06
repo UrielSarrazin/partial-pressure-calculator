@@ -27,11 +27,11 @@ import java.util.List;
 public class BreathingMixServiceUnitTest extends Assert {
 
     @Test
-    void testCalculatePartialPressures() {
+    void partialPressuresCalculationTest() {
 
         final List<PartialPressuresCalculResult> partialPressuresCalculResults = new BreathingMixServiceImpl()
                 .calculatePartialPressures(BreathingMix.AIR);
 
-        assertTrue(partialPressuresCalculResults.size() == 61);
+        assertEquals(partialPressuresCalculResults.size(), 61);
     }
 }

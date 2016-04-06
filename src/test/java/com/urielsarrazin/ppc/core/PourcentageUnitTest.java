@@ -22,10 +22,10 @@ import org.testng.annotations.Test;
 public class PourcentageUnitTest extends Assert {
 
     @Test
-    void testCreate() {
+    void creationTest() {
 
         final Pourcentage pourcentage = Pourcentage.create(10D);
 
-        assertTrue(pourcentage.getValue().equals(10D));
+        assertEquals(pourcentage.getValue(), 10D);
     }
 }
