@@ -56,8 +56,10 @@ item({desc: 'partial-pressure-calculator'}, function() {
 To use this file with Hotshell, issue the following command in the project's root directory :
 
 ```bash
-hs -f hs.js
+hs
 ```
+No parameters are needed as `hs.js` is the only one javascript file in the project's root directory.
+
 The following content will appears on the console :
 
 ```bash
