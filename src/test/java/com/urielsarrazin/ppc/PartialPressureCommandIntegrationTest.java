@@ -40,7 +40,7 @@ public class PartialPressureCommandIntegrationTest extends Assert {
     }
 
     @Test
-    public void testPartialPressureCommand() {
+    public void PartialPressureCommandTest() {
 
         final CommandResult commandResult = shell.executeCommand("partial-pressure --breathingMix AIR");
 
