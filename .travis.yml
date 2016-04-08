@@ -6,4 +6,5 @@ jdk:
   - openjdk8
   - openjdk7
 
-mvn clean install
+script:
+  mvn clean install
