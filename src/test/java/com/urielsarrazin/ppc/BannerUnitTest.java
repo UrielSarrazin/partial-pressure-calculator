@@ -16,12 +16,7 @@
 
 package com.urielsarrazin.ppc;
 
-import org.springframework.shell.Bootstrap;
-import org.springframework.shell.core.CommandResult;
-import org.springframework.shell.core.JLineShellComponent;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class BannerUnitTest extends Assert {
@@ -31,7 +26,7 @@ public class BannerUnitTest extends Assert {
     @Test
     public void getBannerTest() {
 
-        final String expecteBanner = new StringBuilder()
+        final String expectedBanner = new StringBuilder()
                 .append("        ######   #####                                                                \n")
                 .append(" #####  #     # #     #   ##   #       ####  #    # #        ##   #####  ####  #####  \n")
                 .append(" #    # #     # #        #  #  #      #    # #    # #       #  #    #   #    # #    # \n")
@@ -44,22 +39,16 @@ public class BannerUnitTest extends Assert {
                 .append("                                                                                      \n")
                 .toString();
 
-        assertEquals(banner.getBanner(), expecteBanner);
+        assertEquals(banner.getBanner(), expectedBanner);
     }
 
     @Test
     public void getProviderNameTest() {
-
-        final String expecteProviderName = "Partial Pressure Calculator";
-
-        assertEquals(banner.getProviderName(), expecteProviderName);
+        assertEquals(banner.getProviderName(), "Partial Pressure Calculator");
     }
 
     @Test
     public void getWelcomeMessageTest() {
-
-        final String expecteWelcomeMessage = "Welcome to the Partial Pressure Calculator.";
-
-        assertEquals(banner.getWelcomeMessage(), expecteWelcomeMessage);
+        assertEquals(banner.getWelcomeMessage(), "Welcome to the Partial Pressure Calculator.");
     }
 }
