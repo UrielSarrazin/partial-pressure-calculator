@@ -25,6 +25,7 @@ import org.springframework.stereotype.Component;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class Banner extends DefaultBannerProvider {
 
+    @Override
     public String getBanner() {
 
         return new StringBuilder()
