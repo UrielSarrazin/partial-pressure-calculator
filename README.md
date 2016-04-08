@@ -1,4 +1,4 @@
-# Partial Pressure Calculator
+# Partial Pressure Calculator [![Build Status](https://travis-ci.org/urielsarrazin/partial-pressure-calculator.svg?branch=master)](https://travis-ci.org/urielsarrazin/partial-pressure-calculator)
 
 This command-line application calculates partial pressures of the most popular breathing mixes used for diving:
 * Air
