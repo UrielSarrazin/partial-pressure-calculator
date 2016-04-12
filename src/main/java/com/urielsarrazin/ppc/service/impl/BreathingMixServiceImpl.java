@@ -29,6 +29,7 @@ import java.util.List;
 @Service
 public class BreathingMixServiceImpl implements BreathingMixService {
 
+    @Override
     public List<PartialPressuresCalculResult> calculatePartialPressures(BreathingMix breathingMix) {
 
         final List<PartialPressuresCalculResult> partialPressuresCalculResults = new ArrayList<>();
