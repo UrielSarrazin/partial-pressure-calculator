@@ -34,10 +34,10 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-class Command implements CommandMarker {
+public class Command implements CommandMarker {
 
     @Autowired
-    protected BreathingMixService breathingMixService;
+    private BreathingMixService breathingMixService;
 
     @CliCommand(value = "partial-pressure")
     public String gasPartialPressure(
