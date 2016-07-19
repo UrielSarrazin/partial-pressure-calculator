@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class Banner extends DefaultBannerProvider {
+class Banner extends DefaultBannerProvider {
 
     @Override
     public String getBanner() {

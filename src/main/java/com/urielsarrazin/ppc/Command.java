@@ -34,14 +34,14 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class Command implements CommandMarker {
+class Command implements CommandMarker {
 
     @Autowired
     protected BreathingMixService breathingMixService;
 
     @CliCommand(value = "partial-pressure")
     public String gasPartialPressure(
-            @CliOption(key = {"breathingMix"}, mandatory = false)
+            @CliOption(key = {"breathingMix"})
             final BreathingMix breathingMix
     ) {
 
@@ -61,12 +61,12 @@ public class Command implements CommandMarker {
                     .append("\t")
                     .append(partialPressuresCalculResult.getDepth().getMeters());
 
-            for (Map.Entry<Gas, Pressure> pressionPartielleGaz : partialPressuresCalculResult.getPartialPressuresPerGas().entrySet())
+            for (Map.Entry<Gas, Pressure> gasPartialPressure : partialPressuresCalculResult.getPartialPressuresPerGas().entrySet())
                 result
                         .append("\t")
-                        .append(pressionPartielleGaz.getKey())
+                        .append(gasPartialPressure.getKey())
                         .append("\t")
-                        .append(new BigDecimal(pressionPartielleGaz.getValue().getBar()).setScale(2, RoundingMode.HALF_UP).doubleValue());
+                        .append(new BigDecimal(gasPartialPressure.getValue().getBar()).setScale(2, RoundingMode.HALF_UP).doubleValue());
 
             result.append(OsUtils.LINE_SEPARATOR);
         }

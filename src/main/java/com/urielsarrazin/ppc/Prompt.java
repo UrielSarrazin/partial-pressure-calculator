@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class Prompt implements PromptProvider {
+class Prompt implements PromptProvider {
 
     @Override
     public String getPrompt() {
