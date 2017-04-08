@@ -18,17 +18,17 @@ package com.urielsarrazin.ppc.core;
 
 public class Pourcentage {
 
-    private final Double value;
+    private final Double pourcentage;
 
-    private Pourcentage(Double value) {
-        this.value = value;
+    private Pourcentage(Double pourcentage) {
+        this.pourcentage = pourcentage;
     }
 
     public static Pourcentage create(Double pourcentage) {
         return new Pourcentage(pourcentage);
     }
 
-    public Double getValue() {
-        return value;
+    public Double getPourcentage() {
+        return pourcentage;
     }
 }

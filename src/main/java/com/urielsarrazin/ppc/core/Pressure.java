@@ -35,7 +35,7 @@ public class Pressure {
     }
 
     public static Pressure getPartialPressure(Pressure absolutePressure, Pourcentage pourcentage) {
-        return Pressure.createWithBars(absolutePressure.getBar() * pourcentage.getValue() / 100);
+        return Pressure.createWithBars(absolutePressure.getBar() * pourcentage.getPourcentage() / 100);
     }
 
     public Double getBar() {

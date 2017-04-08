@@ -38,6 +38,6 @@ public class BreathingMixComponentUnitTest extends Assert {
 
     @Test
     public  void pourcentageTest() {
-        assertEquals(breathingMixComponent.getPourcentage().getValue(), new Double(20));
+        assertEquals(breathingMixComponent.getPourcentage().getPourcentage(), new Double(20));
     }
 }
