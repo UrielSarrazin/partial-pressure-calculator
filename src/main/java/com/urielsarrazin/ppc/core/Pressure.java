@@ -26,16 +26,16 @@ public class Pressure {
         this.bar = bar;
     }
 
-    public static Pressure create(Double pressure) {
+    public static Pressure createWithBars(Double pressure) {
         return new Pressure(pressure);
     }
 
-    public static Pressure create(Depth depth) {
-        return Pressure.create(ATHMOSPERIC_PRESSURE + (double) depth.getMeters() / 10);
+    public static Pressure createWithDepthInMeters(Depth depth) {
+        return Pressure.createWithBars(ATHMOSPERIC_PRESSURE + (double) depth.getMeters() / 10);
     }
 
     public static Pressure getPartialPressure(Pressure absolutePressure, Pourcentage pourcentage) {
-        return Pressure.create(absolutePressure.getBar() * pourcentage.getValue() / 100);
+        return Pressure.createWithBars(absolutePressure.getBar() * pourcentage.getValue() / 100);
     }
 
     public Double getBar() {

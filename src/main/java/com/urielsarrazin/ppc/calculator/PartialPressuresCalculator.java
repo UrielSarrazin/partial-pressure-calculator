@@ -38,7 +38,7 @@ public class PartialPressuresCalculator {
 
         for (BreathingMixComponent breathingMixComponent : breathingMix.getBreathingMixComponents()) {
 
-            final Pressure absolutePressure = Pressure.create(depth);
+            final Pressure absolutePressure = Pressure.createWithDepthInMeters(depth);
 
             final Pourcentage breathingMixComponentPourcentage = breathingMixComponent.getPourcentage();
 
