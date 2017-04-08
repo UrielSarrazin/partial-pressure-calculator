@@ -25,13 +25,15 @@ import org.springframework.stereotype.Component;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 class Prompt implements PromptProvider {
 
+    private static final String PARTIAL_PRESSURE_CALCULATOR = "partial-pressure-calculator";
+
     @Override
     public String getPrompt() {
-        return "partial-pressure-calculator>";
+        return PARTIAL_PRESSURE_CALCULATOR + ">";
     }
 
     @Override
     public String getProviderName() {
-        return "partial-pressure-calculator";
+        return PARTIAL_PRESSURE_CALCULATOR;
     }
 }
