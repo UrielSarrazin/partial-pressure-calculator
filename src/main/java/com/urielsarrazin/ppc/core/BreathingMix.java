@@ -19,36 +19,38 @@ package com.urielsarrazin.ppc.core;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.urielsarrazin.ppc.core.Gas.*;
+
 public enum BreathingMix {
 
     AIR(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(21D)),
-            BreathingMixComponent.create(Gas.N2, Pourcentage.create(79D))
+            BreathingMixComponent.create(O2, Pourcentage.create(21D)),
+            BreathingMixComponent.create(N2, Pourcentage.create(79D))
     ),
 
     NITROX_32_68(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(32D)),
-            BreathingMixComponent.create(Gas.N2, Pourcentage.create(68D))
+            BreathingMixComponent.create(O2, Pourcentage.create(32D)),
+            BreathingMixComponent.create(N2, Pourcentage.create(68D))
     ),
 
     NITROX_36_64(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(36D)),
-            BreathingMixComponent.create(Gas.N2, Pourcentage.create(64D))
+            BreathingMixComponent.create(O2, Pourcentage.create(36D)),
+            BreathingMixComponent.create(N2, Pourcentage.create(64D))
     ),
 
     NITROX_40_60(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(40D)),
-            BreathingMixComponent.create(Gas.N2, Pourcentage.create(60D))
+            BreathingMixComponent.create(O2, Pourcentage.create(40D)),
+            BreathingMixComponent.create(N2, Pourcentage.create(60D))
     ),
 
     OXYGEN(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(100D))
+            BreathingMixComponent.create(O2, Pourcentage.create(100D))
     ),
 
     TRIMIX_20_25(
-            BreathingMixComponent.create(Gas.O2, Pourcentage.create(20D)),
-            BreathingMixComponent.create(Gas.He, Pourcentage.create(25D)),
-            BreathingMixComponent.create(Gas.N2, Pourcentage.create(55D))
+            BreathingMixComponent.create(O2, Pourcentage.create(20D)),
+            BreathingMixComponent.create(He, Pourcentage.create(25D)),
+            BreathingMixComponent.create(N2, Pourcentage.create(55D))
     );
 
     private final List<BreathingMixComponent> breathingMixComponents;
