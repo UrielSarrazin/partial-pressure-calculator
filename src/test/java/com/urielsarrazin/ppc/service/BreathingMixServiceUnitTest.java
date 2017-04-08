@@ -19,15 +19,15 @@ package com.urielsarrazin.ppc.service;
 import com.urielsarrazin.ppc.calculator.PartialPressuresCalculResult;
 import com.urielsarrazin.ppc.core.BreathingMix;
 import com.urielsarrazin.ppc.service.impl.BreathingMixServiceImpl;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 
 public class BreathingMixServiceUnitTest extends Assert {
 
     @Test
-    void partialPressuresCalculationTest() {
+    public void partialPressuresCalculationTest() {
 
         final List<PartialPressuresCalculResult> partialPressuresCalculResults = new BreathingMixServiceImpl()
                 .calculatePartialPressures(BreathingMix.AIR);

@@ -16,16 +16,16 @@
 
 package com.urielsarrazin.ppc.core;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PourcentageUnitTest extends Assert {
 
     @Test
-    void creationTest() {
+    public void creationTest() {
 
         final Pourcentage pourcentage = Pourcentage.create(10D);
 
-        assertEquals(pourcentage.getValue(), 10D);
+        assertEquals(pourcentage.getValue(), new Double(10));
     }
 }

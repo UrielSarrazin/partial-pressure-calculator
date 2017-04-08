@@ -16,32 +16,32 @@
 
 package com.urielsarrazin.ppc.core;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PressureUnitTest extends Assert {
 
     @Test
-    void creationWithPressureTest() {
+    public void creationWithPressureTest() {
 
-        final Pressure pressure = Pressure.create(1D);
+        final Pressure pressure = Pressure.createWithBars(1D);
 
-        assertEquals(pressure.getBar(), 1.0D);
+        assertEquals(pressure.getBar(), new Double(1));
     }
 
     @Test
-    void creationWithDepthTest() {
+    public void creationWithDepthTest() {
 
-        final Pressure pressure = Pressure.create(Depth.create(12));
+        final Pressure pressure = Pressure.createWithDepthInMeters(Depth.create(12));
 
-        assertEquals(pressure.getBar(), 2.2D);
+        assertEquals(pressure.getBar(), new Double(2.2));
     }
 
     @Test
-    void getPartialPressureTest() {
+    public void getPartialPressureTest() {
 
-        final Pressure partialPressure = Pressure.getPartialPressure(Pressure.create(1D), Pourcentage.create(20D));
+        final Pressure partialPressure = Pressure.getPartialPressure(Pressure.createWithBars(1D), Pourcentage.create(20D));
 
-        assertEquals(partialPressure.getBar(), 0.2D);
+        assertEquals(partialPressure.getBar(), new Double(0.2));
     }
 }

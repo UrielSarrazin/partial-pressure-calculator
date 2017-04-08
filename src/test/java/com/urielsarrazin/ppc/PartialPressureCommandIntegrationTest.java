@@ -19,23 +19,23 @@ package com.urielsarrazin.ppc;
 import org.springframework.shell.Bootstrap;
 import org.springframework.shell.core.CommandResult;
 import org.springframework.shell.core.JLineShellComponent;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class PartialPressureCommandIntegrationTest extends Assert {
 
-    private JLineShellComponent shell;
+    private static JLineShellComponent shell;
 
     @BeforeClass
-    public void startUp() throws InterruptedException {
+    public static void startUp() throws InterruptedException {
         Bootstrap bootstrap = new Bootstrap();
         shell = bootstrap.getJLineShellComponent();
     }
 
     @AfterClass
-    public void shutdown() {
+    public static void shutdown() {
         shell.stop();
     }
 

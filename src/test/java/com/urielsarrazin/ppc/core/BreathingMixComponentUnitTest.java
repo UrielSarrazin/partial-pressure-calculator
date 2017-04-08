@@ -16,28 +16,28 @@
 
 package com.urielsarrazin.ppc.core;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import static com.urielsarrazin.ppc.core.Gas.O2;
 
 public class BreathingMixComponentUnitTest extends Assert {
 
-    private BreathingMixComponent breathingMixComponent;
+    private static BreathingMixComponent breathingMixComponent;
 
     @BeforeClass
-    void init() {
+    public static void init() {
         breathingMixComponent = BreathingMixComponent.create(O2, Pourcentage.create(20D));
     }
 
     @Test
-    void gasTest() {
+    public void gasTest() {
         assertEquals(breathingMixComponent.getGas(), O2);
     }
 
     @Test
-    void pourcentageTest() {
-        assertEquals(breathingMixComponent.getPourcentage().getValue(), 20D);
+    public  void pourcentageTest() {
+        assertEquals(breathingMixComponent.getPourcentage().getValue(), new Double(20));
     }
 }

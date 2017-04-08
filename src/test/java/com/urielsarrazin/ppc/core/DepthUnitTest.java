@@ -16,13 +16,13 @@
 
 package com.urielsarrazin.ppc.core;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class DepthUnitTest extends Assert {
 
     @Test
-    void creationTest() {
+    public void creationTest() {
 
         final Depth depth = Depth.create(10);
 

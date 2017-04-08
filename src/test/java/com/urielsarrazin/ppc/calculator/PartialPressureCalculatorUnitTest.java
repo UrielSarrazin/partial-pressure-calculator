@@ -19,9 +19,9 @@ package com.urielsarrazin.ppc.calculator;
 import com.urielsarrazin.ppc.core.Depth;
 import com.urielsarrazin.ppc.core.Gas;
 import com.urielsarrazin.ppc.core.Pressure;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.util.Map;
 
@@ -31,12 +31,12 @@ import static com.urielsarrazin.ppc.core.Gas.O2;
 
 public class PartialPressureCalculatorUnitTest extends Assert {
 
-    private PartialPressuresCalculResult partialPressuresCalculResult;
+    private static PartialPressuresCalculResult partialPressuresCalculResult;
 
-    private Map<Gas, Pressure> partialPressuresPerGas;
+    private static Map<Gas, Pressure> partialPressuresPerGas;
 
     @BeforeClass
-    void init() {
+    public static void init() {
 
         partialPressuresCalculResult = new PartialPressuresCalculator(AIR, Depth.create(20))
                 .calculatePartialPressures();
@@ -45,35 +45,35 @@ public class PartialPressureCalculatorUnitTest extends Assert {
     }
 
     @Test
-    void breathingMixTest() {
+    public void breathingMixTest() {
         assertEquals(partialPressuresCalculResult.getBreathingMix(), AIR);
     }
 
     @Test
-    void depthTest() {
+    public void depthTest() {
         assertTrue(partialPressuresCalculResult.getDepth().getMeters().equals(20));
     }
 
     @Test
-    void partialPressuresPerGasTest() {
+    public void partialPressuresPerGasTest() {
         assertEquals(partialPressuresPerGas.size(), 2);
     }
 
     @Test
-    void oxygenPartialPressureTest() {
+    public void oxygenPartialPressureTest() {
 
         assertTrue(partialPressuresPerGas.containsKey(O2));
 
         final Pressure oxygenPartialPressure = partialPressuresPerGas.get(O2);
-        assertEquals(oxygenPartialPressure.getBar(), 0.63D);
+        assertEquals(oxygenPartialPressure.getBar(), new Double(0.63));
     }
 
     @Test
-    void nitrogenPartialPressureTest() {
+    public void nitrogenPartialPressureTest() {
 
         assertTrue(partialPressuresPerGas.containsKey(N2));
 
         final Pressure nitrogenPartialPressure = partialPressuresPerGas.get(N2);
-        assertEquals(nitrogenPartialPressure.getBar(), 2.37D);
+        assertEquals(nitrogenPartialPressure.getBar(), new Double(2.37));
     }
 }
