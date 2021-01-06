@@ -48,7 +48,7 @@ item({desc: 'partial-pressure-calculator'}, function() {
     browser = linux ? 'sensible-browser' : 'open'
 
     item({key: 'b', desc: 'build', cmd: 'mvn clean install'})
-    item({key: 'r', desc: 'run', cmd: './target/appassembler/bin/partial-pressure-calculator'})
+    item({key: 'r', desc: 'run', cmd: 'java -jar ./target/partial-pressure-calculator.jar'})
     item({key: 'd', desc: 'documentation', cmd: browser + ' ' + github})
     item({key: 'f', desc: 'file bug report', cmd: browser + ' ' + github + '/issues/new'})
 })
@@ -66,7 +66,7 @@ The following content will appears on the console :
 partial-pressure-calculator
 
 b build mvn clean install
-r run ./target/appassembler/bin/partial-pressure-calculator
+r java -jar ./target/partial-pressure-calculator.jar
 d documentation sensible-browser https://github.com/srielsarrazin/partial-pressure-calculator
 f file bug report sensible-browser https://github.com/urielsarrazin/partial-pressure-calculator/issues/new
 

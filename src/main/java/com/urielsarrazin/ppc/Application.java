@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Uriel Sarrazin
+ * Copyright (C) 2021 Uriel Sarrazin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,13 @@
 
 package com.urielsarrazin.ppc;
 
-import org.jline.utils.AttributedString;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
-import org.springframework.shell.jline.PromptProvider;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Component
-@Order(Ordered.HIGHEST_PRECEDENCE)
-class Prompt implements PromptProvider {
+@SpringBootApplication
+public class Application {
 
-    private static final String PARTIAL_PRESSURE_CALCULATOR = "partial-pressure-calculator>";
-
-    @Override
-    public AttributedString getPrompt() {
-        return new AttributedString(PARTIAL_PRESSURE_CALCULATOR);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 }

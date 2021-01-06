@@ -1,0 +1,5 @@
+spring:
+  shell:
+    command:
+      script:
+        enabled: true

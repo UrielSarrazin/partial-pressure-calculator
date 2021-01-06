@@ -16,6 +16,7 @@
 
 package com.urielsarrazin.ppc;
 
+import org.jline.utils.AttributedString;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,11 +26,6 @@ public class PromptUnitTest extends Assert {
 
     @Test
     public void getPromptTest() {
-        assertEquals(PROMPT.getPrompt(), "partial-pressure-calculator>");
-    }
-
-    @Test
-    public void getProviderNameTest() {
-        assertEquals(PROMPT.getProviderName(), "partial-pressure-calculator");
+        assertEquals(PROMPT.getPrompt(), new AttributedString("partial-pressure-calculator>"));
     }
 }
