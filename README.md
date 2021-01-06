@@ -28,11 +28,16 @@ This application uses Spring Shell. To build it, issue this command in the proje
 mvn clean install
 ```
 
-As it's built and packaged using the Maven AppAsembler plugin, to run the application, run the `partial-pressure-calculator` script (`partial-pressure-calculator.bat` on Windows), located in the `target/appassembler/bin/` repository.
+Run the executable jar by hitting the following command :
+
+```bash
+java -jar ./target/partial-pressure-calculator.jar
+```
+
 Then, issue this sample command:
 
 ```bash
-partial-pressure --breathingMix AIR
+gas-partial-pressure --breathingMix AIR
 ```
 ### Using Hotshell
 
