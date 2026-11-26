@@ -31,19 +31,23 @@
         </developer>
     </developers>
     <properties>
-        <java.version>1.8</java.version>
-        <junit.version>4.13.1</junit.version>
-        <spring.boot.version>2.4.1</spring.boot.version>
-        <spring.boot.maven.plugin>2.4.1</spring.boot.maven.plugin>
-        <spring.shell.version>2.0.0.RELEASE</spring.shell.version>
-        <spring.shell.core.test.support.version>2.0.1.RELEASE</spring.shell.core.test.support.version>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>4.13.2</junit.version>
+        <spring.boot.version>2.7.18</spring.boot.version>
+        <spring.boot.maven.plugin>2.7.18</spring.boot.maven.plugin>
+        <spring.shell.version>2.1.0</spring.shell.version>
+        <spring.shell.core.test.support.version>2.1.0</spring.shell.core.test.support.version>
+        <jacoco.version>0.8.11</jacoco.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     </properties>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -52,7 +56,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.6</version>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -71,6 +75,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <executions>
                     <execution>
                         <goals>
